@@ -1,0 +1,797 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600&family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+
+:root {
+    --cor-primaria: #fef5e3;
+    --cor-secundaria: #f8efd7;
+    --cor-terciaria: #030d2d;
+    --cor-quaternaria: #172cc9;
+    --cor-quintenaria: #4958c8;
+    --cor-sextenaria: #ff1500;
+    --cor-link: #1152b3;
+    --cor-hover: #FAEDCD;
+    --filtro: invert(0%) sepia(6%) saturate(7478%) hue-rotate(255deg) brightness(96%) contrast(104%);
+
+    --fonte-primaria: 'Jost', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+
+    --url-marcador: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMjAwMTA5MDQvL0VOIgogICAgICAgICAgICAgICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+Cgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgICB3aWR0aD0iMWluIiBoZWlnaHQ9IjAuNWluIgogICAgIHZpZXdCb3g9IjAgMCAzMDAgMTUwIj4KICA8cGF0aAogICAgICAgIGZpbGw9IiNmZmUwMDAiIHN0cm9rZT0ibm9uZSIKICAgICAgICBkPSJNIDEyLjAwLDQ4LjAwCiAgICAgICAgICAgQyAxMi4wMCw1MC4wOSAxMS43OSw1NC45OSAxMi42MCw1Ni43MgogICAgICAgICAgICAgMTUuNTksNjMuMTggMjYuMDksNTYuNjQgMzMuMDAsNjMuMDAKICAgICAgICAgICAgIDMwLjg0LDYzLjE4IDIzLjA1LDYzLjg3IDIxLjgwLDY1LjAyCiAgICAgICAgICAgICAxOC4wMiw2Ny44OCAyMS4yOSw3Ni4zNSAyMS44MCw4MC4wMAogICAgICAgICAgICAgMjEuODAsODAuMDAgMjEuODAsODYuMDAgMjEuODAsODYuMDAKICAgICAgICAgICAgIDIxLjgwLDg2LjAwIDQwLjAwLDg3LjAwIDQwLjAwLDg3LjAwCiAgICAgICAgICAgICAzOS45Myw4OC44OCA0MC4wNiw5MS4wNCAzOC45OCw5Mi42OQogICAgICAgICAgICAgMzcuNTEsOTQuOTMgMzUuMTUsOTQuNzUgMzIuNTksOTYuMjAKICAgICAgICAgICAgIDI4LjMzLDk4LjYxIDI2Ljg3LDEwMi4yMiAyNy4zNCwxMDcuMDAKICAgICAgICAgICAgIDI3LjM0LDEwNy4wMCAzMC4wMiwxMjMuNDEgMzAuMDIsMTIzLjQxCiAgICAgICAgICAgICAzMS44MiwxMjUuNzUgNDAuMDEsMTI3Ljk1IDQzLjAwLDEyOC4wMAogICAgICAgICAgICAgNDMuMDAsMTI4LjAwIDg3LjAwLDEyOC4wMCA4Ny4wMCwxMjguMDAKICAgICAgICAgICAgIDg4LjA4LDEyMS41NiA5MS4xNiwxMjEuODAgOTcuMDAsMTIyLjA0CiAgICAgICAgICAgICA5Ny4wMCwxMjIuMDQgMTA5LjAwLDEyMy4wMCAxMDkuMDAsMTIzLjAwCiAgICAgICAgICAgICAxMDkuMDAsMTIzLjAwIDEyOC4wMCwxMjMuMDAgMTI4LjAwLDEyMy4wMAogICAgICAgICAgICAgMTI4LjAwLDEyMy4wMCAxODIuMDAsMTIyLjAwIDE4Mi4wMCwxMjIuMDAKICAgICAgICAgICAgIDE5NC41OCwxMjEuOTcgMTg4LjQyLDExOS4wMyAyMDEuMDAsMTE5LjAwCiAgICAgICAgICAgICAyMDEuMDAsMTE5LjAwIDI0My4wMCwxMTkuMDAgMjQzLjAwLDExOS4wMAogICAgICAgICAgICAgMjQzLjAwLDExOS4wMCAyNTguMDAsMTE4LjAwIDI1OC4wMCwxMTguMDAKICAgICAgICAgICAgIDI1OS41MywxMDkuMTAgMjY2LjAxLDExMy4zNyAyNzAuNDAsMTA5LjE1CiAgICAgICAgICAgICAyNzIuNjEsMTA3LjAzIDI3Mi4zMCwxMDAuODUgMjcyLjAwLDk4LjAwCiAgICAgICAgICAgICAyNzIuMDAsOTguMDAgMjgwLjAwLDk3LjAwIDI4MC4wMCw5Ny4wMAogICAgICAgICAgICAgMjgwLjAwLDk0LjEwIDI4MC4yNiw4OC41NSAyNzkuMjYsODYuMDIKICAgICAgICAgICAgIDI3Ni40OSw3OC45OCAyNjQuNjMsNzYuODggMjU4LjAwLDc2LjAwCiAgICAgICAgICAgICAyNjUuMTUsNjkuMTkgMjc2LjQwLDczLjAzIDI3NC44NSw2Mi4wNAogICAgICAgICAgICAgMjc0LjQ3LDU5LjM1IDI3My43Myw1OC44NSAyNzIuMDAsNTcuMDAKICAgICAgICAgICAgIDI4MS42OCw1My43NyAyODEuMDAsNTQuMjggMjgxLjAwLDQ0LjAwCiAgICAgICAgICAgICAyODEuMDAsNDQuMDAgMjU4LjAwLDQyLjM4IDI1OC4wMCw0Mi4zOAogICAgICAgICAgICAgMjUwLjAwLDQwLjg0IDI1MS40OCwzOC4wMyAyMzUuMDAsMzguMDAKICAgICAgICAgICAgIDIzNS4wMCwzOC4wMCAxODkuMDAsMzkuMDAgMTg5LjAwLDM5LjAwCiAgICAgICAgICAgICAxODkuMDAsMzkuMDAgMTc3LjAwLDM5LjgyIDE3Ny4wMCwzOS44MgogICAgICAgICAgICAgMTc3LjAwLDM5LjgyIDE1OS4wMCwzOC4wMCAxNTkuMDAsMzguMDAKICAgICAgICAgICAgIDE1OS4wMCwzOC4wMCAxMjguMDAsMzguMDAgMTI4LjAwLDM4LjAwCiAgICAgICAgICAgICAxMTYuOTAsMzguMDIgMTIwLjE2LDM5LjQwIDExMy4wMCw0MC42NwogICAgICAgICAgICAgMTEzLjAwLDQwLjY3IDk3LjAwLDQyLjE3IDk3LjAwLDQyLjE3CiAgICAgICAgICAgICA5Ny4wMCw0Mi4xNyA4Ny4wMCw0My44MyA4Ny4wMCw0My44MwogICAgICAgICAgICAgODcuMDAsNDMuODMgNTcuMDAsNDUuMDAgNTcuMDAsNDUuMDAKICAgICAgICAgICAgIDU3LjAwLDQ1LjAwIDMyLjAwLDQ4LjAwIDMyLjAwLDQ4LjAwCiAgICAgICAgICAgICAzMi4wMCw0OC4wMCAxMi4wMCw0OC4wMCAxMi4wMCw0OC4wMCBaIiAvPgo8L3N2Zz4K');
+}
+
+/* Dark Theme */
+.dark,
+dark_header{
+    --cor-primaria: #191f58;
+    --cor-secundaria: #151d3a;
+    --cor-terciaria: #E5E5CB;
+    --cor-quaternaria: #D5CEA3;
+    --cor-quintenaria: hsl(51, 100%, 97%);
+    --cor-sextenaria: #fbf4c8;
+    --cor-link: #89897e;
+    --cor-hover: #1A120B;
+    --filtro: invert(96%) sepia(15%) saturate(294%) hue-rotate(5deg) brightness(97%) contrast(86%);
+}
+
+.dark .bi-sun {
+    display: none;
+}
+
+.dark .bi-moon {
+    display: block;
+}
+
+.dark .skill {
+    filter: hue-rotate(-110deg) saturate(100%) brightness(100%);
+}
+
+.bi{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.bi-moon{
+    display: none;
+}
+
+.solelua{
+    color: var(--cor-terciaria);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    transition: 0.3s;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+.cabecalho{
+    padding: 1% 0% 1% 15%;
+    background-color: var(--cor-secundaria);
+    display: flex;
+    align-items: center;
+    box-shadow: .2px .2px 5px .2px #000000;
+}
+
+.cabecalho__menu{
+    display: flex;
+    align-items: center;
+    gap: 321px;
+}
+
+.cabecalho__menu__links a:hover {
+    color: var(--cor-quaternaria); /* Change color on hover for header links */
+    font-size: 1.31rem; /* Prevent resizing effect */
+}
+
+.language{
+    padding: .5% 0% 0% 0%;
+    align-items: center;
+    position: relative;
+    width: 110px;
+    margin-left: -170px;
+    font-weight: bold;
+}
+
+.language__selected{
+    display: flex;
+    /* align-items: center; */
+    color: var(--cor-terciaria);
+    font-family: var(--fonte-secundaria);
+    cursor: pointer;
+}
+
+.language__selected:before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('/images/br.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+/* jQuery Class */
+
+.language__selected.change-br:before {
+    background-image: url('/images/br.png');
+}
+
+.language__selected.change-en:before {
+    background-image: url('/images/en-us.png');
+}
+
+.language__selected.change-es:before {
+    background-image: url('/images/es.png');
+}
+
+
+.language ul {
+    position: absolute;
+    width: 125px;
+    background-color: var(--cor-secundaria);
+    border: 1px solid var(--cor-hover);
+    padding-top: 10px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.language ul li {
+    list-style: none;
+}
+
+.language ul li a {
+    text-decoration: none;
+    display: block;
+    color: var(--cor-terciaria);
+    font-family: var(--fonte-secundaria);
+    padding-top: 5px 10px;
+}
+
+.language ul li:hover {
+    background-color: var(--cor-primaria);
+}
+
+.language ul li a:before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+a.br:before {
+    background-image: url('/images/br.png');
+}
+
+a.en:before {
+    background-image: url('/images/en-us.png');
+}
+
+a.es:before {
+    background-image: url('/images/es.png');
+}
+
+.language:hover ul {
+    display: block;
+}
+
+.cabecalho__menu__titulo{
+    font-family: var(--fonte-primaria);
+    font-size: 1.625rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+    width: 160px;
+}
+
+.negrito{
+    font-family: var(--fonte-primaria);
+    font-size: 1.625rem;
+    font-weight: 600;
+    color: var(--cor-quaternaria);
+    text-decoration: none;
+}
+
+.cabecalho__menu__links{
+    display: flex;
+    gap: 116px;
+    align-items: center;
+}
+
+.cabecalho__menu__links__pagina{
+    font-family: var(--fonte-primaria);
+    font-size: 1.3125rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+    width: auto;
+}
+
+.apresentacao{
+    padding: 5% 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 200px;
+}
+
+.apresentacao ul li{
+    list-style: none;
+}
+
+.apresentacao__conteudo{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.apresentacao__conteudo__nome{
+    font-size: 1.3125rem;
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__titulo{
+    font-size: 2.125rem;
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-quaternaria);
+}
+
+.apresentacao__conteudo__texto{
+    font-size: 1rem;
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-terciaria);
+    text-align: justify;
+}
+
+.apresentacao__links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.apresentacao__links__icones{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo{
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    font-size: 1.3125rem;
+    color: var(--cor-terciaria);
+}
+.apresentacao__links__icones__navegacao{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid #000000;
+    width: 50%;
+    border-radius: 8px;
+    padding: px 0;
+}
+
+.apresentacao__links__icones__navegacao:hover{
+    background-color: var(--cor-hover);
+}
+
+.apresentacao__links__icones__navegacao__imgs{
+    filter: var(--filtro);
+}
+
+.apresentacao__imagem{
+    width: 50%;
+}
+.rodape{
+    display: flex;
+    justify-content: space-between;
+    color: var(--cor-terciaria);
+    background-color: var(--cor-secundaria);
+    padding: 10px;
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.rodape__email{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.rodape__email__imagem{
+    filter: var(--filtro);
+}
+
+/* Página Sobre mim */
+
+.apresentacao__conteudo__sobre{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.apresentacao__informacoes{
+    font-family: var(--fonte-secundaria);
+    width:50%;
+    display: flex;
+    gap: 140px;
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__informacoes__anivwhats{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.apresentacao__informacoes__anivwhats__aniversario{
+    width: 300%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.apresentacao__informacoes__anivwhats__aniversario__titulo{
+    font-size: medium;
+    color: var(--cor-quaternaria);
+}
+
+.apresentacao__informacoes__anivwhats__whats{
+    width: 300%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.apresentacao__informacoes__anivwhats__whats__titulo{
+    font-size: medium;
+    color: var(--cor-quaternaria);
+}
+
+.apresentacao__informacoes__ageadress{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.apresentacao__informacoes__ageadress__age{
+    width: 300%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.apresentacao__informacoes__ageadress__age__titulo{
+    font-size: medium;
+    color: var(--cor-quaternaria);
+}
+
+.apresentacao__informacoes__ageadress__adress{
+    display: flex;
+    flex-direction: row;
+    width: 300%;
+    align-items: center;
+    gap: 5px;
+}
+
+.apresentacao__informacoes__ageadress__adress__titulo{
+    font-size: medium;
+    color: var(--cor-quaternaria);
+}
+
+/* =================== */
+/* Estilos da Página do Currículo */
+/* =================== */
+
+/* Container principal */
+.apresentacao__container {
+    display: flex;
+    flex-direction: column; /* Layout vertical */
+    justify-content: space-around; /* Distribuição uniforme */
+    align-items: flex-start; /* Alinhamento à esquerda */
+    gap: 50px; /* Espaçamento entre seções */
+    padding-top: 0px;
+    margin-top: 0px; /* Espaçamento superior */
+    width: 100%; /* Largura total */
+}
+
+/* Seção do Currículo */
+.apresentacao__cv {
+    display: flex;
+    flex-direction: row; /* Layout horizontal para currículo e habilidades */
+    gap: 50px; /* Espaçamento entre colunas */
+}
+
+/* Conteúdo do Currículo */
+.skill {
+    font-weight: bold;
+    color: var(--cor-quintenaria);
+        background-image: var(--url-marcador);
+        background-position: 10% 30%;
+        
+        padding-left: 0.1px;
+        padding-right: 4px;
+        padding-top: 1px;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
+/* Soft Skills */
+.soft-skill {
+    font-weight: bold;
+    color: var(--cor-sextenaria);
+    background-image: var(--url-marcador);
+    background-position: 10% 30%;
+    padding-left: 3px;
+    padding-right: 10px;
+    padding-top: 2px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: hue-rotate(80deg) saturate(60%);
+}
+
+
+.apresentacao__cv__conteudo {
+    background-color: var(--cor-primaria); /* Fundo contrastante */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    display: flex;
+    flex-direction: column; /* Layout vertical */
+    gap: 20px; /* Espaçamento entre itens */
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-terciaria); /* Cor padrão do texto */
+    flex: 1; /* Faz a seção ocupar espaço proporcional */
+}
+
+/* Títulos do Currículo */
+.apresentacao__cv__conteudo__titulos {
+    width: 30%;
+    font-family: var(--fonte-secundaria);
+    font-size: 2rem;
+    color: var(--cor-quaternaria);
+    margin: 0.5rem 0; /* Espaçamento vertical padrão */
+}
+
+/* Textos do Currículo */
+.apresentacao__cv__conteudo__textos {
+    width: 90%;
+    font-family: var(--fonte-secundaria);
+    font-size: 1rem;
+    color: var(--cor-terciaria);
+    text-align: justify; /* Texto justificado */
+    gap: 15px; /* Espaçamento interno */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Subtítulos no Currículo */
+.apresentacao__cv__conteudo__textos h2 {
+    font-size: 1.3rem;
+    color: var(--cor-quintenaria);
+    margin-top: 0.5rem; /* Espaço antes do subtítulo */
+    margin-bottom: 0.5rem; /* Espaço depois do subtítulo */
+}
+
+/* Listas no Currículo */
+.apresentacao__cv__conteudo__textos ul {
+    padding-left: 20px; /* Indentação padrão */
+    margin-top: 0; /* Remover margem padrão */
+}
+
+/* Itens da Lista */
+.apresentacao__cv__conteudo__textos ul li {
+    font-size: 1rem;
+    margin-top: 0.2rem; /* Espaço entre itens */
+}
+
+/* Seção de Habilidades */
+.apresentacao__skills {
+    width: 45%; /* Ocupa 40% da largura da linha */
+    padding: 20px; /* Espaçamento interno */
+    background-color: var(--cor-primaria); /* Fundo contrastante */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+}
+
+/* Título de Habilidades */
+.apresentacao__skills__titulo {
+    font-family: var(--fonte-secundaria);
+    font-size: 2rem;
+    color: var(--cor-quaternaria);
+    margin-bottom: 1rem; /* Espaço abaixo do título */
+}
+
+/* Subtítulos de Habilidades */
+.apresentacao__skills__conteudo h3 {
+    font-family: var(--fonte-secundaria);
+    font-size: 1.3rem;
+    color: var(--cor-quintenaria);
+    margin-top: 1rem; /* Espaço acima do subtítulo */
+}
+
+/* Listas de Habilidades */
+.apresentacao__skills__conteudo ul {
+    padding-left: 20px; /* Indentação padrão */
+    margin-top: 0; /* Remover margem padrão */
+}
+
+/* Itens das Listas de Habilidades */
+.apresentacao__skills__conteudo ul li {
+    font-family: var(--fonte-secundaria);
+    font-size: 1rem;
+    color: var(--cor-terciaria);
+    margin-top: 0.2rem; /* Espaço entre itens */
+}
+
+/* Seção de Projetos */
+.apresentacao__projetos {
+    width: 100%; /* Ocupa toda a largura */
+    display: flex;
+    flex-direction: column; /* Layout vertical */
+    gap: 20px; /* Espaçamento entre projetos */
+}
+
+/* Títulos dos Projetos */
+.apresentacao__projetos__titulos {
+    font-family: var(--fonte-secundaria);
+    font-size: 2rem;
+    color: var(--cor-quaternaria);
+    margin: 1rem 0; /* Espaço acima e abaixo */
+}
+
+/* Conteúdo dos Projetos */
+.apresentacao__projetos__conteudo {
+    font-size: 1rem;
+    color: var(--cor-terciaria);
+    text-align: justify; /* Texto justificado */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre itens */
+}
+
+/* Subtítulos dos Projetos */
+.apresentacao__projetos__conteudo ul li h2 {
+    font-size: 1.3rem;
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-quintenaria);
+    margin-bottom: 0.5rem; /* Espaço abaixo do subtítulo */
+}
+
+/* Listas dos Projetos */
+.apresentacao__projetos__conteudo ul li {
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-terciaria);
+    font-size: 1rem;
+}
+
+/* Imagens dos Projetos */
+.apresentacao__imagem {
+    width: 100%; /* Largura total */
+    max-width: 470px; /* Largura máxima */
+    height: auto; /* Manter proporção */
+    margin: 0 auto; /* Centralizar imagem */
+    display: block; /* Elemento de bloco */
+}
+
+/* Links */
+a {
+    text-decoration: none; /* Remove sublinhado */
+    color: var(--cor-link); /* Cor padrão do link */
+}
+
+a:hover {
+    color: var(--cor-quaternaria); /* Cor ao passar o mouse */
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+
+@media (max-width: 1200px) {
+    .cabecalho{
+        padding: 2%;
+        width: auto;
+    }
+    .cabecalho__menu{
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .cabecalho__menu__titulo{
+        font-size: 0.8rem;
+        width: 110px;
+    }
+
+    .negrito{
+        font-size: 0.8rem;
+        width: auto;
+    }
+
+    .cabecalho__menu__links{
+        gap: 10px;
+    }
+
+    .cabecalho__menu__links__pagina{
+        font-size: 0.6rem;
+        width: auto;
+    }
+
+    .sobremim{
+        font-size: 0.6rem;
+        width: 47px;
+    }
+
+    .apresentacao{
+        width: auto;
+        flex-direction: column-reverse;
+        padding: 10% 0% 10% 0%;
+        gap: 50px;
+    }
+
+    .apresentacao__conteudo{
+        width: 80%;
+        height: auto;
+    }
+
+    .apresentacao__conteudo__nome{
+        font-size: 21px;
+    }
+
+    .apresentacao__conteudo__titulo{
+        font-size: 40px;
+    }
+
+    .apresentacao__conteudo__texto{
+        font-size: 21px;
+    }
+
+    .rodape{
+        width: auto;
+        height: 20px;
+        font-size: 0.6rem;
+        padding: 5px;
+        justify-content: center;
+        gap: 130px;
+    }
+
+    .rodape__email{
+        height: 8px;
+        font-size: 0.6rem;
+    }
+
+    .rodape__email__imagem{
+        width: 15px;
+        height: 15px;
+    }
+
+    .apresentacao__conteudo__sobre{
+        width: 80%;
+        gap: 10px;
+    }
+
+    .apresentacao__informacoes{
+        flex-direction: column;
+        gap: 10px;
+        width: auto;
+    }
+
+    .apresentacao__informacoes__anivwhats__aniversario{
+        width: auto;
+    }
+
+    .apresentacao__informacoes__anivwhats__whats{
+        width: auto;
+    }
+
+    .apresentacao__informacoes__ageadress__adress{
+        width: auto;
+    }
+
+    .apresentacao__informacoes__ageadress__age{
+        width: auto;
+    }
+
+    .apresentacao__informacoes__anivwhats__aniversario__titulo{
+        font-size: small;
+    }
+
+    .apresentacao__informacoes__anivwhats__aniversario__escrita{
+        font-size: small;
+    }
+
+    .apresentacao__informacoes__anivwhats__whats__titulo{
+        font-size: small;
+    }
+
+    .apresentacao__informacoes__anivwhats__whats__escrita{
+        font-size: small;
+    }
+
+    .apresentacao__informacoes__ageadress__age__titulo{
+        font-size: small;
+    }
+
+    .apresentacao__informacoes__ageadress__age__escrita{
+        font-size: small;
+    }
+
+    .apresentacao__informacoes__ageadress__adress__titulo{
+        font-size: small;
+    }
+
+    .apresentacao__informacoes__ageadress__adress__escrita{
+        font-size: small;
+    }
+
+    .apresentacao__cv__conteudo{
+        width: 80%;
+        gap: 20px;
+    }
+
+    .apresentacao__cv__conteudo__titulos{
+        font-size: 34px;
+    }
+
+    .apresentacao__cv__conteudo__textos{
+        font-size: 16px;
+    }
+
+    .bi{
+        font-size: .6rem;
+    }
+
+    .language{
+        margin-left: 7px;
+    }
+
+    .language__selected{
+        font-size: 0.6rem;
+    }
+
+    .language__selected::before{
+        width: 15px;
+        height: 15px;
+    }
+
+    .language ul{
+        width: auto;
+    }
+
+    .language ul li a{
+        font-size: 0.7rem;
+    }
+    
+    .language__selected.change-en:before {
+        background-image: url('/images/en-us.png');
+    }
+    
+    .language__selected.change-es:before {
+        background-image: url('/images/es.png');
+    }
+}
