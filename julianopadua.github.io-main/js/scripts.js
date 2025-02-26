@@ -220,3 +220,33 @@ document.addEventListener("DOMContentLoaded", function () {
     document.documentElement.style.setProperty("--url-marcador", randomMarker);
     document.documentElement.style.setProperty("--url-marcador1", randomMarker);
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    function updateDate() {
+        const dateElement = document.querySelector(".rodape p");
+        const currentDate = new Date();
+        
+        // Get selected language
+        let selectedLanguage = document.querySelector(".language__selected").textContent.trim().toLowerCase();
+        
+        // Format date
+        let formattedDate;
+        if (selectedLanguage === "en") {
+            formattedDate = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`; // MM/DD/YYYY
+        } else {
+            formattedDate = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`; // DD/MM/YYYY
+        }
+
+        dateElement.textContent = `Juliano Pádua - ${formattedDate}`;
+    }
+
+    updateDate(); // Run once on page load
+
+    // Update date when the language changes
+    document.querySelectorAll(".language ul li a").forEach(langButton => {
+        langButton.addEventListener("click", function() {
+            setTimeout(updateDate, 100); // Small delay to ensure the language updates
+        });
+    });
+});
