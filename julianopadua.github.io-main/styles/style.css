@@ -299,6 +299,7 @@ a.es:before {
 .apresentacao__imagem{
     width: 50%;
 }
+
 .rodape{
     display: flex;
     justify-content: space-between;
@@ -307,7 +308,7 @@ a.es:before {
     padding: 10px;
     text-align: center;
     font-family: var(--fonte-secundaria);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
 }
 
@@ -318,6 +319,8 @@ a.es:before {
 }
 
 .rodape__email__imagem{
+    width: 18px;
+    height: 18px;
     filter: var(--filtro);
 }
 
@@ -570,7 +573,14 @@ a.es:before {
     text-align: justify; /* Texto justificado */
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espaçamento entre itens */
+    gap: 10px; /* Espaçamento entre itens */
+}
+
+.apresentacao__projetos__conteudo ul {
+    display: flex;
+    align-items: center; /* Align text and image vertically */
+    justify-content: space-between; /* Push text to left and image to right */
+    gap: 80px; /* Space between text and image */
 }
 
 /* Subtítulos dos Projetos */
@@ -588,6 +598,18 @@ a.es:before {
     font-size: 1rem;
 }
 
+.apresentacao__projetos__imagem {
+    width: 400px; /* Set a fixed width */
+    height: 300px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image maintains proportions without distortion */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+.apresentacao__projetos__imagem-container {
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
 /* Imagens dos Projetos */
 .apresentacao__imagem {
     width: 100%; /* Largura total */
@@ -595,6 +617,13 @@ a.es:before {
     height: auto; /* Manter proporção */
     margin: 0 auto; /* Centralizar imagem */
     display: block; /* Elemento de bloco */
+}
+
+.apresentacao__imagem__index {
+    width: 35%; /* Increase width */
+    height: 616px; /* Maintain aspect ratio */
+    margin: 0 auto; /* Keep it centered */
+    display: block; /* Ensure it's treated as a block element */
 }
 
 /* Links */
@@ -672,7 +701,7 @@ a:hover {
     .rodape{
         width: auto;
         height: 20px;
-        font-size: 0.6rem;
+        font-size: 1rem;
         padding: 5px;
         justify-content: center;
         gap: 130px;
@@ -680,7 +709,7 @@ a:hover {
 
     .rodape__email{
         height: 8px;
-        font-size: 0.6rem;
+        font-size: 1rem;
     }
 
     .rodape__email__imagem{
