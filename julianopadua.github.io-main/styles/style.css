@@ -456,6 +456,10 @@ a.es:before {
     filter: hue-rotate(80deg) saturate(60%);
 }
 
+.skill-name {
+    font-weight: 500; /* Semi-bold weight */
+    color: inherit;
+}
 
 .apresentacao__cv__conteudo {
     background-color: var(--cor-primaria); /* Fundo contrastante */
@@ -573,7 +577,7 @@ a.es:before {
     text-align: justify; /* Texto justificado */
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espaçamento entre itens */
+    gap: 10px; /* Space between title and content */
 }
 
 .apresentacao__projetos__conteudo ul {
@@ -638,7 +642,43 @@ a:hover {
     font-size: 1rem;
 }
 
+.apresentacao__projetos__linha {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Adding significant space between project lines */
+}
 
+.job-title a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    font-size: inherit;
+}
+
+.job-title a:hover {
+    color: var(--cor-quaternaria);
+}
+
+.job-title a::after {
+    content: "Conheça a empresa";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.job-title a:hover::after {
+    opacity: 1;
+}
 
 @media (max-width: 1200px) {
     .cabecalho{
