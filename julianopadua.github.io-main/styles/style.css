@@ -130,7 +130,7 @@ input[type="checkbox"]{
     display: inline-block;
     width: 30px;
     height: 30px;
-    background-image: url('/images/br.png');
+    background-image: url('../images/br.png');
     background-size: contain;
     background-repeat: no-repeat;
     margin-right: 10px;
@@ -139,15 +139,15 @@ input[type="checkbox"]{
 /* jQuery Class */
 
 .language__selected.change-br:before {
-    background-image: url('/images/br.png');
+    background-image: url('../images/br.png');
 }
 
 .language__selected.change-en:before {
-    background-image: url('/images/en-us.png');
+    background-image: url('../images/en.png');
 }
 
 .language__selected.change-es:before {
-    background-image: url('/images/es.png');
+    background-image: url('../images/es.png');
 }
 
 
@@ -189,15 +189,15 @@ input[type="checkbox"]{
 }
 
 a.br:before {
-    background-image: url('/images/br.png');
+    background-image: url('../images/br.png');
 }
 
 a.en:before {
-    background-image: url('/images/en-us.png');
+    background-image: url('../images/en.png');
 }
 
 a.es:before {
-    background-image: url('/images/es.png');
+    background-image: url('../images/es.png');
 }
 
 .language:hover ul {
@@ -442,8 +442,22 @@ a.es:before {
 /* Seção do Currículo */
 .apresentacao__cv {
     display: flex;
-    flex-direction: row; /* Layout horizontal para currículo e habilidades */
-    gap: 50px; /* Espaçamento entre colunas */
+    flex-direction: row;
+    padding: 0px;
+    gap: 50px;
+}
+
+.apresentacao__cv__conteudo {
+    background-color: var(--cor-primaria);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-terciaria);
+    flex: 1;
 }
 
 /* Conteúdo do Currículo */
@@ -500,19 +514,6 @@ a.es:before {
     color: var(--cor-quintenaria);  /* Changed from inherit to match skill color */
 }
 
-.apresentacao__cv__conteudo {
-    background-color: var(--cor-primaria); /* Fundo contrastante */
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 10px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Sombra sutil */
-    display: flex;
-    flex-direction: column; /* Layout vertical */
-    gap: 20px; /* Espaçamento entre itens */
-    font-family: var(--fonte-secundaria);
-    color: var(--cor-terciaria); /* Cor padrão do texto */
-    flex: 1; /* Faz a seção ocupar espaço proporcional */
-}
-
 /* Títulos do Currículo */
 .apresentacao__cv__conteudo__titulos {
     width: 30%;
@@ -556,11 +557,11 @@ a.es:before {
 
 /* Seção de Habilidades */
 .apresentacao__skills {
-    width: 45%; /* Ocupa 40% da largura da linha */
-    padding: 20px; /* Espaçamento interno */
-    background-color: var(--cor-primaria); /* Fundo contrastante */
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    width: 45%;
+    padding: 20px;
+    background-color: var(--cor-primaria);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* Título de Habilidades */
@@ -894,10 +895,10 @@ a:hover {
     }
     
     .language__selected.change-en:before {
-        background-image: url('/images/en-us.png');
+        background-image: url('../images/en.png');
     }
     
     .language__selected.change-es:before {
-        background-image: url('/images/es.png');
+        background-image: url('../images/es.png');
     }
 }
