@@ -28,6 +28,8 @@ dark_header{
     --cor-link: #89897e;
     --cor-hover: #1A120B;
     --filtro: invert(96%) sepia(15%) saturate(294%) hue-rotate(5deg) brightness(97%) contrast(86%);
+    --skill-color-dark: #f4eac2;  /* New variable for skill text color in dark mode */
+    --soft-skill-color-dark: #f4eac2;  /* New variable for soft skill text color in dark mode */
 }
 
 .dark .bi-sun {
@@ -39,7 +41,23 @@ dark_header{
 }
 
 .dark .skill {
-    filter: hue-rotate(-110deg) saturate(100%) brightness(100%);
+    color: var(--skill-color-dark);
+}
+
+.dark .skill::before {
+    filter: hue-rotate(-110deg) saturate(80%) brightness(70%);
+}
+
+.dark .soft-skill {
+    color: var(--soft-skill-color-dark);
+}
+
+.dark .soft-skill::before {
+    filter: hue-rotate(330deg) saturate(80%) brightness(70%);
+}
+
+.dark .skill-name {
+    color: var(--skill-color-dark);
 }
 
 .bi{
@@ -432,33 +450,54 @@ a.es:before {
 .skill {
     font-weight: bold;
     color: var(--cor-quintenaria);
-        background-image: var(--url-marcador);
-        background-position: 10% 30%;
-        
-        padding-left: 0.1px;
-        padding-right: 4px;
-        padding-top: 1px;
-        background-repeat: no-repeat;
-        background-size: cover;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0 2px;
+}
+
+.skill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -2px;
+    right: -2px;
+    bottom: 0;
+    background-image: var(--url-marcador);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: -1;
 }
 
 /* Soft Skills */
 .soft-skill {
     font-weight: bold;
-    color: var(--cor-sextenaria);
+    color: var(--cor-quintenaria);
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0 2px;
+}
+
+.soft-skill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -2px;
+    right: -2px;
+    bottom: 0;
     background-image: var(--url-marcador1);
-    background-position: 10% 30%;
-    padding-left: 3px;
-    padding-right: 10px;
-    padding-top: 2px;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    filter: hue-rotate(80deg) saturate(60%);
+    background-size: 100% 100%;
+    filter: hue-rotate(80deg) saturate(100%) brightness(100%);
+    z-index: -1;
 }
 
 .skill-name {
-    font-weight: 500; /* Semi-bold weight */
-    color: inherit;
+    font-weight: 600; /* Semi-bold weight */
+    color: var(--cor-quintenaria);  /* Changed from inherit to match skill color */
 }
 
 .apresentacao__cv__conteudo {
