@@ -83,6 +83,9 @@ body{
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
     transition: 0.3s;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%;
+    position: relative;
 }
 
 input[type="checkbox"]{
@@ -720,185 +723,395 @@ a:hover {
     opacity: 1;
 }
 
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger-icon {
+    width: 24px;
+    height: 24px;
+    filter: var(--filtro);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--cor-primaria);
+    padding: 2rem;
+    z-index: 99;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+}
+
+.mobile-menu__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--cor-terciaria);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu__links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 4rem;
+    padding: 1rem;
+}
+
+.mobile-menu__link {
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+    padding: 1rem;
+    border-bottom: 1px solid var(--cor-secundaria);
+    transition: color 0.3s ease;
+}
+
+.mobile-menu__link:hover {
+    color: var(--cor-quaternaria);
+}
+
+/* Mobile Menu Language Selector */
+.mobile-menu__language {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 1px solid var(--cor-secundaria);
+}
+
+.mobile-menu__language__title {
+    font-family: var(--fonte-secundaria);
+    font-size: 1.2rem;
+    color: var(--cor-quaternaria);
+    margin-bottom: 1rem;
+}
+
+.mobile-menu__language__current {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.5rem;
+    background-color: var(--cor-secundaria);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.mobile-menu__language__flag {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.mobile-menu__language__text {
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-terciaria);
+    font-size: 1rem;
+}
+
+.mobile-menu__language__options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu__language__option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem;
+    text-decoration: none;
+    color: var(--cor-terciaria);
+    font-family: var(--fonte-secundaria);
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.mobile-menu__language__option:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-quaternaria);
+}
+
+.mobile-menu__language__option img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
 @media (max-width: 1200px) {
-    .cabecalho{
-        padding: 2%;
-        width: auto;
-    }
-    .cabecalho__menu{
-        justify-content: center;
-        gap: 10px;
+    .mobile-menu {
+        display: block;
     }
 
-    .cabecalho__menu__titulo{
-        font-size: 0.8rem;
-        width: 110px;
+    .cabecalho {
+        padding: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        position: relative;
     }
 
-    .negrito{
-        font-size: 0.8rem;
-        width: auto;
+    .cabecalho__menu {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
     }
 
-    .cabecalho__menu__links{
-        gap: 10px;
+    .cabecalho__menu__links {
+        display: none;
     }
 
-    .cabecalho__menu__links__pagina{
-        font-size: 0.6rem;
-        width: auto;
+    .hamburger-menu {
+        display: block;
     }
 
-    .sobremim{
-        font-size: 0.6rem;
-        width: 47px;
+    .cabecalho__menu__titulo {
+        font-size: 1.2rem;
+        margin: 0 auto;
+        text-align: center;
+        order: 2;
     }
 
-    .apresentacao{
-        width: auto;
-        flex-direction: column-reverse;
-        padding: 10% 0% 10% 0%;
-        gap: 50px;
+    .negrito {
+        font-size: 1.2rem;
     }
 
-    .apresentacao__conteudo{
-        width: 80%;
-        height: auto;
+    .solelua {
+        order: 3;
     }
 
-    .apresentacao__conteudo__nome{
-        font-size: 21px;
+    .language {
+        display: none;
     }
 
-    .apresentacao__conteudo__titulo{
-        font-size: 40px;
-    }
-
-    .apresentacao__conteudo__texto{
-        font-size: 21px;
-    }
-
-    .rodape{
-        width: auto;
-        height: 20px;
-        font-size: 1rem;
-        padding: 5px;
-        justify-content: center;
-        gap: 130px;
-    }
-
-    .rodape__email{
-        height: 8px;
-        font-size: 1rem;
-    }
-
-    .rodape__email__imagem{
-        width: 15px;
-        height: 15px;
-    }
-
-    .apresentacao__conteudo__sobre{
-        width: 80%;
-        gap: 10px;
-    }
-
-    .apresentacao__informacoes{
+    .apresentacao {
         flex-direction: column;
-        gap: 10px;
-        width: auto;
+        padding: 2rem 1rem;
+        gap: 2rem;
+        min-height: calc(100vh - 10rem);
     }
 
-    .apresentacao__informacoes__anivwhats__aniversario{
-        width: auto;
+    .apresentacao__conteudo {
+        width: 100%;
+        padding: 0;
     }
 
-    .apresentacao__informacoes__anivwhats__whats{
-        width: auto;
+    .apresentacao__conteudo__nome {
+        font-size: 1.2rem;
     }
 
-    .apresentacao__informacoes__ageadress__adress{
-        width: auto;
+    .apresentacao__conteudo__titulo {
+        font-size: 1.2rem;
     }
 
-    .apresentacao__informacoes__ageadress__age{
-        width: auto;
+    .apresentacao__conteudo__texto {
+        font-size: 0.9rem;
     }
 
-    .apresentacao__informacoes__anivwhats__aniversario__titulo{
-        font-size: small;
+    .apresentacao__imagem {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
     }
 
-    .apresentacao__informacoes__anivwhats__aniversario__escrita{
-        font-size: small;
+    .apresentacao__imagem__index {
+        width: 240px;
+        height: 400px;
+        margin: 0 auto;
     }
 
-    .apresentacao__informacoes__anivwhats__whats__titulo{
-        font-size: small;
+    .apresentacao__links__subtitulo {
+        font-size: 0.9rem;
     }
 
-    .apresentacao__informacoes__anivwhats__whats__escrita{
-        font-size: small;
+    .apresentacao__links__icones__navegacao {
+        width: 100%;
+        max-width: 180px;
     }
 
-    .apresentacao__informacoes__ageadress__age__titulo{
-        font-size: small;
+    .rodape {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        gap: 1rem;
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        margin-top: auto;
     }
 
-    .apresentacao__informacoes__ageadress__age__escrita{
-        font-size: small;
+    .rodape__email {
+        font-size: 0.8rem;
     }
 
-    .apresentacao__informacoes__ageadress__adress__titulo{
-        font-size: small;
+    .rodape__email__imagem {
+        width: 20px;
+        height: 20px;
     }
 
-    .apresentacao__informacoes__ageadress__adress__escrita{
-        font-size: small;
+    .body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
-    .apresentacao__cv__conteudo{
-        width: 80%;
-        gap: 20px;
+    main {
+        flex: 1;
     }
 
-    .apresentacao__cv__conteudo__titulos{
-        font-size: 34px;
+    .apresentacao__conteudo__sobre {
+        width: 100%;
+        padding: 0;
     }
 
-    .apresentacao__cv__conteudo__textos{
-        font-size: 16px;
+    .apresentacao__informacoes {
+        width: 100%;
+        gap: 1rem;
     }
 
-    .bi{
-        font-size: .6rem;
+    .apresentacao__informacoes__anivwhats,
+    .apresentacao__informacoes__ageadress {
+        width: 100%;
+        gap: 1rem;
     }
 
-    .language{
-        margin-left: 7px;
+    .apresentacao__informacoes__anivwhats__aniversario,
+    .apresentacao__informacoes__anivwhats__whats,
+    .apresentacao__informacoes__ageadress__age,
+    .apresentacao__informacoes__ageadress__adress {
+        width: 100%;
     }
 
-    .language__selected{
-        font-size: 0.6rem;
+    /* Adaptações para cv.html */
+    .apresentacao__container {
+        flex-direction: column;
+        padding: 0.5rem;
+        gap: 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .language__selected::before{
-        width: 15px;
-        height: 15px;
+    .apresentacao__cv {
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+        padding: 0;
     }
 
-    .language ul{
-        width: auto;
+    .apresentacao__cv__conteudo {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    .language ul li a{
-        font-size: 0.7rem;
+    .apresentacao__cv__conteudo__textos {
+        width: 95%;
+        padding: 0;
+        box-sizing: border-box;
     }
-    
-    .language__selected.change-en:before {
-        background-image: url('../images/en.png');
+
+    .apresentacao__skills {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
     }
-    
-    .language__selected.change-es:before {
-        background-image: url('../images/es.png');
+
+    .apresentacao__skills__conteudo {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .apresentacao__projetos {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .apresentacao__projetos__conteudo {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .apresentacao__projetos__linha {
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .apresentacao__projetos__conteudo ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .apresentacao__projetos__conteudo ul li {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .apresentacao__projetos__textos {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .apresentacao__projetos__imagem-container {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .apresentacao__projetos__imagem {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .job-title {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .job-description {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .skill, .soft-skill {
+        display: inline-block;
+        box-sizing: border-box;
     }
 }

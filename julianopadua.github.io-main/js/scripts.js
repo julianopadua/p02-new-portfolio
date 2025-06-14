@@ -588,3 +588,86 @@ function applyLanguage() {
 $(document).ready(function() {
     applyLanguage();
 });
+
+// Mobile Menu
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const mobileMenu = document.querySelector('.mobile-menu');
+const closeMenu = document.querySelector('.mobile-menu__close');
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu__link');
+
+// Toggle menu
+hamburgerMenu.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent event from bubbling up
+    mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+
+// Close menu
+closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+// Close menu when clicking on a link
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburgerMenu.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+// Prevent clicks inside menu from bubbling up
+mobileMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+// Mobile Menu Language Selector
+document.addEventListener('DOMContentLoaded', function() {
+    const languageOptions = document.querySelectorAll('.mobile-menu__language__option');
+    const currentLanguage = document.querySelector('.mobile-menu__language__current');
+    const currentFlag = currentLanguage.querySelector('.mobile-menu__language__flag');
+    const currentText = currentLanguage.querySelector('.mobile-menu__language__text');
+
+    languageOptions.forEach(option => {
+        option.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = this.getAttribute('data-lang');
+            const flag = this.querySelector('img').src;
+            const text = this.querySelector('span').textContent;
+
+            // Update current language display
+            currentFlag.src = flag;
+            currentText.textContent = text;
+
+            // Update language in header
+            const headerLanguage = document.querySelector('.language__selected');
+            headerLanguage.className = 'language__selected change-' + lang;
+            headerLanguage.textContent = lang;
+
+            // Trigger the appropriate language change
+            switch(lang) {
+                case 'br':
+                    $(".br").click();
+                    break;
+                case 'en':
+                    $(".en").click();
+                    break;
+                case 'es':
+                    $(".es").click();
+                    break;
+            }
+
+            // Close mobile menu after language change
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+});

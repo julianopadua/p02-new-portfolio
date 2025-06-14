@@ -10,219 +10,256 @@
     <script src="./js/scripts.js" defer></script>
 </head>
 <body>
-    <header class="cabecalho">
-        <nav class="cabecalho__menu">
-            <p class="cabecalho__menu__titulo">Juliano <strong class="negrito">Pádua</strong></p> 
-            <div class="cabecalho__menu__links">
-                <a class="cabecalho__menu__links__pagina" href="index.html">Home</a>
-                <div class="sobremim">
-                    <a class="cabecalho__menu__links__pagina" href="about.html">Sobre mim</a>
+    <div class="body">
+        <header class="cabecalho">
+            <nav class="cabecalho__menu">
+                <p class="cabecalho__menu__titulo">Juliano <strong class="negrito">Pádua</strong></p>
+                <button class="hamburger-menu" aria-label="Menu">
+                    <img src="./images/hamburger-menu.png" alt="Menu" class="hamburger-icon">
+                </button>
+                <div class="cabecalho__menu__links">
+                    <a class="cabecalho__menu__links__pagina" href="index.html">Home</a>
+                    <div class="sobremim">
+                        <a class="cabecalho__menu__links__pagina" href="about.html">Sobre mim</a>
+                    </div>
+                    <a class="cabecalho__menu__links__pagina" href="cv.html">Currículo</a>
                 </div>
-                <a class="cabecalho__menu__links__pagina" href="cv.html">Currículo</a>
-            </div>
-            <div>
-                <input type="checkbox" name="change-theme" id="change-theme">
-                <label class="solelua" for="change-theme">
-                    <i class="bi bi-sun"></i>
-                    <i class="bi bi-moon"></i>
-                </label>
-            </div> 
-            <div class="language">
-                <div class="language__selected">
-                    pt-br
-                </div>
-                <ul>
-                    <li><a href="#" class="br">Português</a></li>
-                    <li><a href="#" class="en">English</a></li>
-                    <li><a href="#" class="es">Español</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <main class="apresentacao">
-        <div class="apresentacao__container">
-            <section class="apresentacao__cv">
-                <div class="apresentacao__cv__conteudo">
+                <div>
+                    <input type="checkbox" name="change-theme" id="change-theme">
+                    <label class="solelua" for="change-theme">
+                        <i class="bi bi-sun"></i>
+                        <i class="bi bi-moon"></i>
+                    </label>
+                </div> 
+                <div class="language">
+                    <div class="language__selected">
+                        pt-br
+                    </div>
                     <ul>
-                        <li><h1 class="apresentacao__cv__conteudo__titulos">Currículo</h1></li>
-                        <div class="apresentacao__cv__conteudo__textos">
-                            <ul>
-                                <li><h2 class="job-title">Monitor de Introdução à Computação e Tutor de Geometria Analítica - UFSCar</h2></li>
-                                <li>
-                                    <p class="job-description">
-                                        Realizei monitoria em Introdução à Computação, auxiliando estudantes no aprendizado da linguagem 
-                                        <span class="skill">Python</span> e fundamentos da programação. Além disso, atuei como tutor de 
-                                        Geometria Analítica, apoiando alunos na compreensão de conceitos matemáticos e <span class="soft-skill">resolução de problemas</span>.
-                                    </p>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li><h2 class="job-title"><a href="https://leadfy-imob.com.br/" target="_blank">Leadfy Imob</a></h2></li>
-                                <li><p class="job-duration">Mai de 2024 - Ago de 2024 · 4 meses</p></li>
-                                <li>
-                                    <p class="job-description">
-                                        No meu estágio na Leadfy Imob, tive a oportunidade de aprimorar minhas habilidades de <span class="soft-skill">trabalho em equipe</span>, atendimento ao cliente e suporte técnico, desenvolvendo 
-                                        habilidades interpessoais de <span class="soft-skill">comunicação</span> e <span class="soft-skill">resolução de problemas</span>. Trabalhei com <span class="skill">metodologias ágeis</span>, utilizando o ClickUp para gestão de projetos e implementando práticas Kanban, o que fortaleceu minha capacidade de <span class="soft-skill">gestão de tempo</span> e <span class="soft-skill">adaptabilidade</span>.
-                                    </p>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li><h2 class="job-title"><a href="https://hedgepointglobal.com/" target="_blank">HedgePoint Global Markets</a></h2></li>
-                                <li><p class="job-duration">Set de 2024 - Mar de 2025</p></li>
-                                <li>
-                                    <p class="job-description">
-                                        Na HedgePoint Global Markets, foquei em otimizar fluxos de trabalho com 
-                                        <span class="skill">Python</span>, <span class="skill">Excel e VBA</span>. Desenvolvi soluções para coleta, tratamento e organização de grandes volumes de dados, utilizando técnicas avançadas de <span class="skill">web scraping</span>.
-                                        Participei de análises de mercado e reuniões, onde me familiarizei com conceitos avançados de economia como <span class="skill">hedging</span> e <span class="skill">mercado de commodities</span>, além de contribuir tanto com o refino de minha <span class="soft-skill">comunicação</span>, quanto com o meu <span class="soft-skill">trabalho em equipe</span>.
-                                    </p>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li><h2 class="job-title"><a href="https://www.alljuicecapital.com/" target="_blank">All Juice Capital</a></h2></li>
-                                <li><p class="job-duration">Mai de 2025 - Atualmente</p></li>
-                                <li>
-                                    <p class="job-description">
-                                        Colaboro e construo produtos de software internos e externos para a startup inglesa All Juice Capital. Atuo no desenvolvimento de soluções tecnológicas utilizando <span class="skill">Python</span>, <span class="skill">TypeScript</span> e <span class="skill">trading systems</span>, aplicando <span class="skill">metodologias ágeis</span> no dia a dia através de práticas Kanban. Além do desenvolvimento, contribuo com a <span class="soft-skill">gestão de equipe</span>, <span class="soft-skill">onboarding</span> de novos funcionários e desenvolvimento de documentação técnica. Esta experiência voluntária tem sido fundamental para o desenvolvimento de minhas habilidades técnicas e profissionais, especialmente em <span class="soft-skill">liderança</span> e <span class="soft-skill">mentoria</span>.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
+                        <li><a href="#" class="br">Português</a></li>
+                        <li><a href="#" class="en">English</a></li>
+                        <li><a href="#" class="es">Español</a></li>
                     </ul>
                 </div>
-                <div class="apresentacao__skills">
-                    <ul>
-                        <li><h1 class="apresentacao__skills__titulo">Habilidades</h1></li>
-                        <div class="apresentacao__skills__conteudo">
-                            <h3><span class="soft-skill">Soft Skills</span></h3>
-                            <ul>
-                                <li><span class="skill-name">Comunicação clara e eficaz</span> - habilidade aprimorada como tutor e monitor acadêmico, aplicada no atendimento ao cliente e em reuniões estratégicas.</li>
-                                <li><span class="skill-name">Trabalho em equipe</span> - desenvolvida em ambientes de colaboração, como projetos acadêmicos, suporte e interações multidisciplinares.</li>
-                                <li><span class="skill-name">Resolução criativa de problemas</span> - exercitada ao criar soluções técnicas para fluxos de trabalho e ao ajudar alunos na compreensão de conceitos desafiadores.</li>
-                                <li><span class="skill-name">Gestão de tempo</span> - aplicada no equilíbrio entre estudos, estágios e projetos pessoais, garantindo prazos e alta produtividade.</li>
-                                <li><span class="skill-name">Liderança e mentoria</span> - desenvolvidas através do onboarding e gestão de novos funcionários, além da criação de documentação técnica.</li>
-                                <li><span class="skill-name">Adaptabilidade</span> - fortalecida pela experiência com metodologias ágeis e diferentes ambientes de trabalho.</li>
-                            </ul>
-                            <h3><span class="skill">Hard Skills</span></h3>
-                            <ul>
-                                <li><span class="skill-name">Python</span> - usado para análise de dados, webscraping, automação de processos e desenvolvimento de sistemas.</li>
-                                <li><span class="skill-name">TypeScript</span> - aplicado no desenvolvimento de aplicações web e sistemas full-stack.</li>
-                                <li><span class="skill-name">Trading Systems</span> - desenvolvimento e implementação de algoritmos e sistemas de trading.</li>
-                                <li><span class="skill-name">Full-Stack Development</span> - experiência em desenvolvimento completo de aplicações web.</li>
-                                <li><span class="skill-name">Metodologias Ágeis</span> - experiência prática com Kanban e ferramentas como ClickUp para gestão de projetos e equipes.</li>
-                                <li><span class="skill-name">Conhecimento Econômico</span> - experiência em análise de mercados, hedging e commodities, aplicado em ambiente profissional de trading.</li>
-                                <li><span class="skill-name">SQL</span> - aplicado em consultas complexas e modelagem de dados para suporte a análises de mercado.</li>
-                                <li><span class="skill-name">Excel e VBA</span> - incluindo automação de tarefas e geração de relatórios personalizados.</li>
-                                <li><span class="skill-name">Git/GitHub</span> - gerenciando versionamento de código em projetos colaborativos.</li>
-                                <li><span class="skill-name">Linguagem C e C++</span> - aplicadas em algoritmos de baixo nível e resolução de problemas acadêmicos.</li>
-                                <li><span class="skill-name">HTML e CSS</span> - habilidades utilizadas para desenvolvimento de projetos front-end e portfólio pessoal.</li>
-                            </ul>
-                        </div>
+            </nav>
+        </header>
+
+        <div class="mobile-menu">
+            <button class="mobile-menu__close" aria-label="Fechar menu">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <nav class="mobile-menu__links">
+                <a href="index.html" class="mobile-menu__link">Home</a>
+                <a href="about.html" class="mobile-menu__link">Sobre mim</a>
+                <a href="cv.html" class="mobile-menu__link">Currículo</a>
+                <div class="mobile-menu__language">
+                    <h3 class="mobile-menu__language__title">Escolha o idioma</h3>
+                    <div class="mobile-menu__language__current">
+                        <img src="./images/br.png" alt="Idioma atual" class="mobile-menu__language__flag">
+                        <span class="mobile-menu__language__text">Português</span>
+                    </div>
+                    <ul class="mobile-menu__language__options">
+                        <li><a href="#" class="mobile-menu__language__option br" data-lang="br">
+                            <img src="./images/br.png" alt="Português" class="mobile-menu__language__flag">
+                            <span>Português</span>
+                        </a></li>
+                        <li><a href="#" class="mobile-menu__language__option en" data-lang="en">
+                            <img src="./images/en.png" alt="English" class="mobile-menu__language__flag">
+                            <span>English</span>
+                        </a></li>
+                        <li><a href="#" class="mobile-menu__language__option es" data-lang="es">
+                            <img src="./images/es.png" alt="Español" class="mobile-menu__language__flag">
+                            <span>Español</span>
+                        </a></li>
                     </ul>
                 </div>
-            </section>
-    
-            <section class="apresentacao__projetos">
-                <div class="apresentacao__projetos__conteudo">
-                    <h1 class="apresentacao__projetos__titulos">Meus Projetos</h1>
-                    <div class="apresentacao__projetos__linha">
-                        <ul>
-                            <!-- Projeto 1 -->
-                            <ul>
-                                <li>
-                                    <div class="apresentacao__projetos__textos">
-                                        <h2>Análise Comparativa de Empresas</h2>
-                                        <p>Este projeto é uma aplicação web desenvolvida em Python utilizando Streamlit para fornecer uma análise comparativa de indicadores financeiros de diferentes empresas e uma análise gráfica dos dados históricos das ações. O objetivo é educacional, aplicando conhecimentos adquiridos em prática!</p>
-                                        <a href="https://github.com/julianopadua/Comparativo-Empresarial-Online" target="_blank">Ver no GitHub</a>
-                                    </div>
-                                    <div class="apresentacao__projetos__imagem-container">
-                                        <img class="apresentacao__projetos__imagem" src="images/comparativo-empresarial.png" alt="Imagem do Projeto Análise Comparativa">
-                                    </div>
-                                </li>
-                            </ul>
-                
-                            <!-- Projeto 2 -->
-                            <ul>
-                                <li>
-                                    <div class="apresentacao__projetos__textos">
-                                        <h2>Project Initialization App</h2>
-                                        <p>Aplicação baseada em Streamlit que facilita a criação de estruturas de projetos personalizadas. Permite definir diretórios, personalizar arquivos essenciais e gerar um arquivo ZIP do projeto. Ideal para otimizar o início de novos projetos com eficiência e consistência.</p>
-                                        <a href="https://github.com/julianopadua/web_project_creator/tree/main" target="_blank">Ver no GitHub</a>
-                                    </div>
-                                    <div class="apresentacao__projetos__imagem-container">
-                                        <img class="apresentacao__projetos__imagem" src="images/project-initialization-app.png" alt="Imagem do Projeto Initialization App">
-                                    </div>
-                                </li>
-                            </ul>
+            </nav>
+        </div>
 
-                            <!-- Projeto 3: Dólar Aumenta ou Diminui -->
-                            <ul>
-                                <li>
-                                    <div class="apresentacao__projetos__textos">
-                                        <h2>Pra onde vai o Dólar?</h2>
-                                        <p>Este projeto utiliza técnicas de Machine Learning para prever se o dólar (USD/BRL=X) irá subir ou cair no dia seguinte. Baseia-se em dados históricos da taxa de câmbio e indicadores financeiros, aplicando algoritmos de classificação para análise preditiva.</p>
-                                        <a href="https://github.com/julianopadua/Aumento-ou-Diminuicao-Dolar" target="_blank">Ver no GitHub</a>
-                                    </div>
-                                    <div class="apresentacao__projetos__imagem-container">
-                                        <img class="apresentacao__projetos__imagem" src="images/aumento-ou-diminuicao-dolar.png" alt="Imagem do Projeto Cotação do Dólar">
-                                    </div>
-                                </li>
-                            </ul>
-                        </ul>
-                        
-                        
+        <main class="apresentacao">
+            <div class="apresentacao__container">
+                <section class="apresentacao__cv">
+                    <div class="apresentacao__cv__conteudo">
                         <ul>
-                            <!-- Projeto 4: Cotação do Dólar -->
-                            <ul>
-                                <li>
-                                    <div class="apresentacao__projetos__textos">
-                                        <h2>Cotação do Dólar: Previsão com Machine Learning</h2>
-                                        <p>Este projeto utiliza Machine Learning para tentar prever o valor do dólar (USD/BRL=X) no dia seguinte, aplicando o modelo ARIMA X. A abordagem se baseia em séries temporais e dados históricos da taxa de câmbio para gerar previsões com maior precisão.</p>
-                                        <a href="https://github.com/julianopadua/cotacao-do-dolar" target="_blank">Ver no GitHub</a>
-                                    </div>
-                                    <div class="apresentacao__projetos__imagem-container">
-                                        <img class="apresentacao__projetos__imagem" src="images/cotacao-do-dolar.png" alt="Imagem do Projeto Cotação do Dólar">
-                                    </div>
-                                </li>
-                            </ul>
-                            
-                            <!-- Projeto 5: Financial Report -->
-                            <ul>
-                                <li>
-                                    <div class="apresentacao__projetos__textos">
-                                        <h2>Relatório Financeiro Automatizado</h2>
-                                        <p>Aplicação web desenvolvida com Streamlit que permite aos usuários gerar relatórios financeiros detalhados e personalizados. Os usuários podem selecionar diferentes ativos financeiros para análise comparativa, visualizar gráficos interativos e métricas importantes, além de escolher o idioma do relatório. O sistema automatiza todo o processo de coleta de dados, análise e geração de PDF.</p>
-                                        <a href="https://github.com/julianopadua/p03-web-report" target="_blank">Ver no GitHub</a>
-                                    </div>
-                                    <div class="apresentacao__projetos__imagem-container">
-                                        <img class="apresentacao__projetos__imagem" src="images/financial-report.png" alt="Imagem do Projeto Relatório Financeiro">
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <!-- Projeto 6: Limpador de Pastas -->
-                            <ul>
-                                <li>
-                                    <div class="apresentacao__projetos__textos">
-                                        <h2>Limpador de Pastas</h2>
-                                        <p>Ferramenta desenvolvida em Python que auxilia na gestão de armazenamento, identificando automaticamente os arquivos e diretórios mais pesados dentro de um local especificado. O programa facilita a limpeza de espaço em disco, apresentando de forma clara e organizada os maiores consumidores de armazenamento, permitindo uma tomada de decisão mais eficiente na liberação de espaço.</p>
-                                        <a href="https://github.com/julianopadua/Cleaner-com-Python" target="_blank">Ver no GitHub</a>
-                                    </div>
-                                    <div class="apresentacao__projetos__imagem-container">
-                                        <img class="apresentacao__projetos__imagem" src="images/cleaner-python.png" alt="Imagem do Projeto Limpador de Pastas">
-                                    </div>
-                                </li>
-                            </ul>
+                            <li><h1 class="apresentacao__cv__conteudo__titulos">Currículo</h1></li>
+                            <div class="apresentacao__cv__conteudo__textos">
+                                <ul>
+                                    <li><h2 class="job-title">Monitor de Introdução à Computação e Tutor de Geometria Analítica - UFSCar</h2></li>
+                                    <li>
+                                        <p class="job-description">
+                                            Realizei monitoria em Introdução à Computação, auxiliando estudantes no aprendizado da linguagem 
+                                            <span class="skill">Python</span> e fundamentos da programação. Além disso, atuei como tutor de 
+                                            Geometria Analítica, apoiando alunos na compreensão de conceitos matemáticos e <span class="soft-skill">resolução de problemas</span>.
+                                        </p>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li><h2 class="job-title"><a href="https://leadfy-imob.com.br/" target="_blank">Leadfy Imob</a></h2></li>
+                                    <li><p class="job-duration">Mai de 2024 - Ago de 2024 · 4 meses</p></li>
+                                    <li>
+                                        <p class="job-description">
+                                            No meu estágio na Leadfy Imob, tive a oportunidade de aprimorar minhas habilidades de <span class="soft-skill">trabalho em equipe</span>, atendimento ao cliente e suporte técnico, desenvolvendo 
+                                            habilidades interpessoais de <span class="soft-skill">comunicação</span> e <span class="soft-skill">resolução de problemas</span>. Trabalhei com <span class="skill">metodologias ágeis</span>, utilizando o ClickUp para gestão de projetos e implementando práticas Kanban, o que fortaleceu minha capacidade de <span class="soft-skill">gestão de tempo</span> e <span class="soft-skill">adaptabilidade</span>.
+                                        </p>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li><h2 class="job-title"><a href="https://hedgepointglobal.com/" target="_blank">HedgePoint Global Markets</a></h2></li>
+                                    <li><p class="job-duration">Set de 2024 - Mar de 2025</p></li>
+                                    <li>
+                                        <p class="job-description">
+                                            Na HedgePoint Global Markets, foquei em otimizar fluxos de trabalho com 
+                                            <span class="skill">Python</span>, <span class="skill">Excel e VBA</span>. Desenvolvi soluções para coleta, tratamento e organização de grandes volumes de dados, utilizando técnicas avançadas de <span class="skill">web scraping</span>.
+                                            Participei de análises de mercado e reuniões, onde me familiarizei com conceitos avançados de economia como <span class="skill">hedging</span> e <span class="skill">mercado de commodities</span>, além de contribuir tanto com o refino de minha <span class="soft-skill">comunicação</span>, quanto com o meu <span class="soft-skill">trabalho em equipe</span>.
+                                        </p>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li><h2 class="job-title"><a href="https://www.alljuicecapital.com/" target="_blank">All Juice Capital</a></h2></li>
+                                    <li><p class="job-duration">Mai de 2025 - Atualmente</p></li>
+                                    <li>
+                                        <p class="job-description">
+                                            Colaboro e construo produtos de software internos e externos para a startup inglesa All Juice Capital. Atuo no desenvolvimento de soluções tecnológicas utilizando <span class="skill">Python</span>, <span class="skill">TypeScript</span> e <span class="skill">trading systems</span>, aplicando <span class="skill">metodologias ágeis</span> no dia a dia através de práticas Kanban. Além do desenvolvimento, contribuo com a <span class="soft-skill">gestão de equipe</span>, <span class="soft-skill">onboarding</span> de novos funcionários e desenvolvimento de documentação técnica. Esta experiência voluntária tem sido fundamental para o desenvolvimento de minhas habilidades técnicas e profissionais, especialmente em <span class="soft-skill">liderança</span> e <span class="soft-skill">mentoria</span>.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
                         </ul>
                     </div>
-                </div>
-            </section>            
-        </div>
-    </main>    
-    <footer class="rodape">
-        <p>Juliano Pádua - 2023</p>
-        <p class="rodape__email"><img class="rodape__email__imagem" id="imgemail" src="./images/emailclaro.png">julianofpadua@gmail.com</p>
-    </footer>
+                    <div class="apresentacao__skills">
+                        <ul>
+                            <li><h1 class="apresentacao__skills__titulo">Habilidades</h1></li>
+                            <div class="apresentacao__skills__conteudo">
+                                <h3><span class="soft-skill">Soft Skills</span></h3>
+                                <ul>
+                                    <li><span class="skill-name">Comunicação clara e eficaz</span> - habilidade aprimorada como tutor e monitor acadêmico, aplicada no atendimento ao cliente e em reuniões estratégicas.</li>
+                                    <li><span class="skill-name">Trabalho em equipe</span> - desenvolvida em ambientes de colaboração, como projetos acadêmicos, suporte e interações multidisciplinares.</li>
+                                    <li><span class="skill-name">Resolução criativa de problemas</span> - exercitada ao criar soluções técnicas para fluxos de trabalho e ao ajudar alunos na compreensão de conceitos desafiadores.</li>
+                                    <li><span class="skill-name">Gestão de tempo</span> - aplicada no equilíbrio entre estudos, estágios e projetos pessoais, garantindo prazos e alta produtividade.</li>
+                                    <li><span class="skill-name">Liderança e mentoria</span> - desenvolvidas através do onboarding e gestão de novos funcionários, além da criação de documentação técnica.</li>
+                                    <li><span class="skill-name">Adaptabilidade</span> - fortalecida pela experiência com metodologias ágeis e diferentes ambientes de trabalho.</li>
+                                </ul>
+                                <h3><span class="skill">Hard Skills</span></h3>
+                                <ul>
+                                    <li><span class="skill-name">Python</span> - usado para análise de dados, webscraping, automação de processos e desenvolvimento de sistemas.</li>
+                                    <li><span class="skill-name">TypeScript</span> - aplicado no desenvolvimento de aplicações web e sistemas full-stack.</li>
+                                    <li><span class="skill-name">Trading Systems</span> - desenvolvimento e implementação de algoritmos e sistemas de trading.</li>
+                                    <li><span class="skill-name">Full-Stack Development</span> - experiência em desenvolvimento completo de aplicações web.</li>
+                                    <li><span class="skill-name">Metodologias Ágeis</span> - experiência prática com Kanban e ferramentas como ClickUp para gestão de projetos e equipes.</li>
+                                    <li><span class="skill-name">Conhecimento Econômico</span> - experiência em análise de mercados, hedging e commodities, aplicado em ambiente profissional de trading.</li>
+                                    <li><span class="skill-name">SQL</span> - aplicado em consultas complexas e modelagem de dados para suporte a análises de mercado.</li>
+                                    <li><span class="skill-name">Excel e VBA</span> - incluindo automação de tarefas e geração de relatórios personalizados.</li>
+                                    <li><span class="skill-name">Git/GitHub</span> - gerenciando versionamento de código em projetos colaborativos.</li>
+                                    <li><span class="skill-name">Linguagem C e C++</span> - aplicadas em algoritmos de baixo nível e resolução de problemas acadêmicos.</li>
+                                    <li><span class="skill-name">HTML e CSS</span> - habilidades utilizadas para desenvolvimento de projetos front-end e portfólio pessoal.</li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                </section>
+        
+                <section class="apresentacao__projetos">
+                    <div class="apresentacao__projetos__conteudo">
+                        <h1 class="apresentacao__projetos__titulos">Meus Projetos</h1>
+                        <div class="apresentacao__projetos__linha">
+                            <ul>
+                                <!-- Projeto 1 -->
+                                <ul>
+                                    <li>
+                                        <div class="apresentacao__projetos__textos">
+                                            <h2>Análise Comparativa de Empresas</h2>
+                                            <p>Este projeto é uma aplicação web desenvolvida em Python utilizando Streamlit para fornecer uma análise comparativa de indicadores financeiros de diferentes empresas e uma análise gráfica dos dados históricos das ações. O objetivo é educacional, aplicando conhecimentos adquiridos em prática!</p>
+                                            <a href="https://github.com/julianopadua/Comparativo-Empresarial-Online" target="_blank">Ver no GitHub</a>
+                                        </div>
+                                        <div class="apresentacao__projetos__imagem-container">
+                                            <img class="apresentacao__projetos__imagem" src="images/comparativo-empresarial.png" alt="Imagem do Projeto Análise Comparativa">
+                                        </div>
+                                    </li>
+                                </ul>
+                    
+                                <!-- Projeto 2 -->
+                                <ul>
+                                    <li>
+                                        <div class="apresentacao__projetos__textos">
+                                            <h2>Project Initialization App</h2>
+                                            <p>Aplicação baseada em Streamlit que facilita a criação de estruturas de projetos personalizadas. Permite definir diretórios, personalizar arquivos essenciais e gerar um arquivo ZIP do projeto. Ideal para otimizar o início de novos projetos com eficiência e consistência.</p>
+                                            <a href="https://github.com/julianopadua/web_project_creator/tree/main" target="_blank">Ver no GitHub</a>
+                                        </div>
+                                        <div class="apresentacao__projetos__imagem-container">
+                                            <img class="apresentacao__projetos__imagem" src="images/project-initialization-app.png" alt="Imagem do Projeto Initialization App">
+                                        </div>
+                                    </li>
+                                </ul>
 
+                                <!-- Projeto 3: Dólar Aumenta ou Diminui -->
+                                <ul>
+                                    <li>
+                                        <div class="apresentacao__projetos__textos">
+                                            <h2>Pra onde vai o Dólar?</h2>
+                                            <p>Este projeto utiliza técnicas de Machine Learning para prever se o dólar (USD/BRL=X) irá subir ou cair no dia seguinte. Baseia-se em dados históricos da taxa de câmbio e indicadores financeiros, aplicando algoritmos de classificação para análise preditiva.</p>
+                                            <a href="https://github.com/julianopadua/Aumento-ou-Diminuicao-Dolar" target="_blank">Ver no GitHub</a>
+                                        </div>
+                                        <div class="apresentacao__projetos__imagem-container">
+                                            <img class="apresentacao__projetos__imagem" src="images/aumento-ou-diminuicao-dolar.png" alt="Imagem do Projeto Cotação do Dólar">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </ul>
+                            
+                            
+                            <ul>
+                                <!-- Projeto 4: Cotação do Dólar -->
+                                <ul>
+                                    <li>
+                                        <div class="apresentacao__projetos__textos">
+                                            <h2>Cotação do Dólar: Previsão com Machine Learning</h2>
+                                            <p>Este projeto utiliza Machine Learning para tentar prever o valor do dólar (USD/BRL=X) no dia seguinte, aplicando o modelo ARIMA X. A abordagem se baseia em séries temporais e dados históricos da taxa de câmbio para gerar previsões com maior precisão.</p>
+                                            <a href="https://github.com/julianopadua/cotacao-do-dolar" target="_blank">Ver no GitHub</a>
+                                        </div>
+                                        <div class="apresentacao__projetos__imagem-container">
+                                            <img class="apresentacao__projetos__imagem" src="images/cotacao-do-dolar.png" alt="Imagem do Projeto Cotação do Dólar">
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+                                <!-- Projeto 5: Financial Report -->
+                                <ul>
+                                    <li>
+                                        <div class="apresentacao__projetos__textos">
+                                            <h2>Relatório Financeiro Automatizado</h2>
+                                            <p>Aplicação web desenvolvida com Streamlit que permite aos usuários gerar relatórios financeiros detalhados e personalizados. Os usuários podem selecionar diferentes ativos financeiros para análise comparativa, visualizar gráficos interativos e métricas importantes, além de escolher o idioma do relatório. O sistema automatiza todo o processo de coleta de dados, análise e geração de PDF.</p>
+                                            <a href="https://github.com/julianopadua/p03-web-report" target="_blank">Ver no GitHub</a>
+                                        </div>
+                                        <div class="apresentacao__projetos__imagem-container">
+                                            <img class="apresentacao__projetos__imagem" src="images/financial-report.png" alt="Imagem do Projeto Relatório Financeiro">
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <!-- Projeto 6: Limpador de Pastas -->
+                                <ul>
+                                    <li>
+                                        <div class="apresentacao__projetos__textos">
+                                            <h2>Limpador de Pastas</h2>
+                                            <p>Ferramenta desenvolvida em Python que auxilia na gestão de armazenamento, identificando automaticamente os arquivos e diretórios mais pesados dentro de um local especificado. O programa facilita a limpeza de espaço em disco, apresentando de forma clara e organizada os maiores consumidores de armazenamento, permitindo uma tomada de decisão mais eficiente na liberação de espaço.</p>
+                                            <a href="https://github.com/julianopadua/Cleaner-com-Python" target="_blank">Ver no GitHub</a>
+                                        </div>
+                                        <div class="apresentacao__projetos__imagem-container">
+                                            <img class="apresentacao__projetos__imagem" src="images/cleaner-python.png" alt="Imagem do Projeto Limpador de Pastas">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </section>            
+            </div>
+        </main>    
+        <footer class="rodape">
+            <p>Juliano Pádua - 2023</p>
+            <p class="rodape__email"><img class="rodape__email__imagem" id="imgemail" src="./images/emailclaro.png">julianofpadua@gmail.com</p>
+        </footer>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 </body>
 </html>
